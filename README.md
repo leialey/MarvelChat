@@ -12,7 +12,7 @@ The app is structured in MVVM way.
 You need to obtain your private and public keys from: 
 https://developer.marvel.com/docs 
 
-Add the keys to apiKey.plist (see apiKey_example.plist):
+Rename apiKey_example.plist to apiKey.plist and add your keys:
 
 	<key>publicKey</key>
 	<string>yourPublicKey</string>
