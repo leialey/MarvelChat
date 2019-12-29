@@ -9,7 +9,10 @@ Technology stack:
 
 The app is structured in MVVM way. 
 
-You need to obtain your private and public keys from and add them to apiKey.plist (see apiKey_example.plist):
+You need to obtain your private and public keys from: 
+https://developer.marvel.com/docs 
+
+Add the keys to apiKey.plist (see apiKey_example.plist):
 
 	<key>publicKey</key>
 	<string>yourPublicKey</string>
