@@ -2,9 +2,9 @@ Marvel Chat is a simple app fetching a list of Marvel characters' avatars and na
 
 Technology stack:
 
-Realm
-Alamofire
-SwiftyJSON
-AlamofireImage
+- Realm
+- Alamofire
+- SwiftyJSON
+- AlamofireImage
 
 The app is structured in MVVM way. 
