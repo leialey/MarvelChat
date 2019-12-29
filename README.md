@@ -2,9 +2,19 @@ Marvel Chat is a simple app fetching a list of Marvel characters' avatars and na
 
 Technology stack:
 
-Realm
-Alamofire
-SwiftyJSON
-AlamofireImage
+- Realm
+- Alamofire
+- SwiftyJSON
+- AlamofireImage
 
 The app is structured in MVVM way. 
+
+You need to obtain your private and public keys from: 
+https://developer.marvel.com/docs 
+
+Add the keys to apiKey.plist (see apiKey_example.plist):
+
+	<key>publicKey</key>
+	<string>yourPublicKey</string>
+	<key>privateKey</key>
+	<string>yourPrivateKey</string>
