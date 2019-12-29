@@ -18,3 +18,5 @@ Add the keys to apiKey.plist (see apiKey_example.plist):
 	<string>yourPublicKey</string>
 	<key>privateKey</key>
 	<string>yourPrivateKey</string>
+	
+![Alt text](https://user-images.githubusercontent.com/47685603/71552944-9421ce00-2a38-11ea-8e01-250fc00a7e88.png "")
