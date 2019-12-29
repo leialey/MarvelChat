@@ -12,6 +12,6 @@ The app is structured in MVVM way.
 You need to obtain your private and public keys from and add them to apiKey.plist (see apiKey_example.plist):
 
 	<key>publicKey</key>
-	<string>**yourPublicKey**</string>
+	<string>yourPublicKey</string>
 	<key>privateKey</key>
-	<string>**yourPrivateKey**</string>
+	<string>yourPrivateKey</string>
