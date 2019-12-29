@@ -7,7 +7,7 @@ Technology stack:
 - SwiftyJSON
 - AlamofireImage
 
-The app is structured in MVVM way. 
+The app is designed in MVVM way. 
 
 You need to obtain your private and public keys from: 
 https://developer.marvel.com/docs 
