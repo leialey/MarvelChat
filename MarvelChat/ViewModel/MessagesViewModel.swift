@@ -13,21 +13,7 @@ class MessagesViewModel {
     var messages: Results<ChatMessage>?
     let messagesData = MessagesData()
     private var notificationToken : NotificationToken?
-    var onSuccess: (([Int], [Int], [Int]) -> ())? {
-        didSet {
-            notificationToken = messages?.observe { [weak self] (changes: RealmCollectionChange) in
-                switch changes {
-                case .initial:
-                    return
-                case .update(_, let deletions, let insertions, let modifications):
-                    self?.onSuccess!(deletions, insertions, modifications)
-                case .error(let error):
-                    fatalError("\(error)")
-                }
-            }
-        }
-    }
-    
+    var onSuccess: (([Int], [Int], [Int]) -> ())?
     var onError: ((TaskError) -> ())?
     var realm = try! Realm()
     var character: Character
@@ -37,6 +23,16 @@ class MessagesViewModel {
         self.character = character
         if messages?.count == 0 {
             reply(message: "Привет, я \(character.name)")
+        }
+        notificationToken = messages?.observe { [weak self] (changes: RealmCollectionChange) in
+            switch changes {
+            case .initial:
+                return
+            case .update(_, let deletions, let insertions, let modifications):
+                self?.onSuccess?(deletions, insertions, modifications)
+            case .error(let error):
+                fatalError("\(error)")
+            }
         }
     }
     

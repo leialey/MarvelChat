@@ -46,25 +46,20 @@ struct ApiRequest {
 
 struct APIImage {
     private let fileExtension: String
-    private let path: String
+    private var path: String
     var secureURL: URL?
     private let imageFormat = "standard_medium"
     
     init(path: String, fileExtension: String) {
         self.path = path
         self.fileExtension = fileExtension
-        self.secureURL = URL(string: securePath(path: path) + "/\(imageFormat)." + fileExtension)
+        self.secureURL = URL(string: securePath(path: &self.path) + "/\(imageFormat)." + fileExtension)
     }
     
-    private func securePath (path: String) -> String {
+    private func securePath (path: inout String) -> String {
         if path.hasPrefix("http://") {
-            let range = path.range(of: "http://")
-            var newPath = path
-            newPath.removeSubrange(range!)
-            return "https://" + newPath
-        } else {
+            path = path.replacingOccurrences(of: "http://", with: "https://")
+        }
             return path
         }
-    }
-    
 }
